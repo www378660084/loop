@@ -2,7 +2,6 @@
 loop implementation
 
 
-===================
 example
 -------------------
 ```c
@@ -12,14 +11,13 @@ loop_register_fd(loop,STDIN_FILENO,on_data_in,NULL,NULL);
 loop_loop(NULL);
 ```
 
-========
 for file read write
 ---------------------
 ```c
 typedef void (*loop_cbk_t)(int fd); 
 int loop_register_fd(void* loop,int fd,loop_cbk_t on_data_in,loop_cbk_t on_data_out,loop_cbk_t on_error);
 ```
-=======
+
 for message send 
 --------------
 ```c
@@ -27,7 +25,7 @@ int loop_send_msg(void* loop,int id,void*data);
 int loop_send_msg_delay(void* loop,int id,void* data,unsigned long delay);
 int loop_post_msg(void* loop,int id,void*data);
 ```
-=======
+
 message handler
 --------------
 ```c
@@ -35,7 +33,7 @@ typedef void (*loop_handler_t)(int id,void* data);
 void loop_loop(loop_handler_t handler);
 ```
 
-=======
+
 for run in loop thread
 ----------------
 ```c
