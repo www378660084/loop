@@ -5,30 +5,35 @@ loop implementation
 ===================
 example
 -------------------
-void* loop = loop_get();<br/>
-loop_register_fd(loop,fd,on_data_in,NULL,NULL);<br/>
-loop_register_fd(loop,STDIN_FILENO,on_data_in,NULL,NULL);<br/>
-loop_loop(NULL);<br/>
-
+```c
+void* loop = loop_get();
+loop_register_fd(loop,fd,on_data_in,NULL,NULL);
+loop_register_fd(loop,STDIN_FILENO,on_data_in,NULL,NULL);
+loop_loop(NULL);
+```
 
 ========
 for file read write
 ---------------------
-typedef void (*loop_cbk_t)(int fd); <br/>
-int loop_register_fd(void* loop,int fd,loop_cbk_t on_data_in,loop_cbk_t on_data_out,loop_cbk_t on_error); <br/>
-
+```c
+typedef void (*loop_cbk_t)(int fd); 
+int loop_register_fd(void* loop,int fd,loop_cbk_t on_data_in,loop_cbk_t on_data_out,loop_cbk_t on_error);
+```
 =======
 for message send 
 --------------
-int loop_send_msg(void* loop,int id,void*data);<br/>
-int loop_send_msg_delay(void* loop,int id,void* data,unsigned long delay);<br/>
-int loop_post_msg(void* loop,int id,void*data);<br/>
-
+```c
+int loop_send_msg(void* loop,int id,void*data);
+int loop_send_msg_delay(void* loop,int id,void* data,unsigned long delay);
+int loop_post_msg(void* loop,int id,void*data);
+```
 =======
 message handler
 --------------
+```c
 typedef void (*loop_handler_t)(int id,void* data);<br/>
 void loop_loop(loop_handler_t handler);<br/>
+```
 
 =======
 for run in loop thread
