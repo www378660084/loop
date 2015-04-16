@@ -5,8 +5,8 @@
  *      Author: Administrator
  */
 
-#ifndef SLOOP_H_
-#define SLOOP_H_
+#ifndef ___LOOP_H_
+#define ___LOOP_H_
 #include <sys/epoll.h>
 #include <pthread.h>
 
@@ -32,4 +32,4 @@ int loop_post_at(void* loop,loop_run_t run,unsigned long when);
 unsigned long loop_get_time();
 
 
-#endif /* SLOOP_H_ */
+#endif /* ___LOOP_H_ */
