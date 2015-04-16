@@ -39,8 +39,8 @@ void loop_loop(loop_handler_t handler);
 for run in loop thread
 ----------------
 ```c
-typedef void (*loop_run_t)();<br/>
-int loop_post(void* loop,loop_run_t run);<br/>
-int loop_post_delay(void* loop,loop_run_t run,unsigned long delay);<br/>
-int loop_post_at(void* loop,loop_run_t run,unsigned long when);<br/>
+typedef void (*loop_run_t)();
+int loop_post(void* loop,loop_run_t run);
+int loop_post_delay(void* loop,loop_run_t run,unsigned long delay);
+int loop_post_at(void* loop,loop_run_t run,unsigned long when);
 ```
